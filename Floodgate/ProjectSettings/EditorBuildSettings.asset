@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WaterTest.unity
+    guid: 153278c80ae30c944a1da3d5d21ab735
   m_configObjects: {}
