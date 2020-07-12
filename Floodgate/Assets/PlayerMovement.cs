@@ -15,26 +15,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        processPlayerInput();
+        processPlayerMovement();
     }
 
-    void processPlayerInput()
+    void processPlayerMovement()
     {
-        if (Input.GetKey("w"))//Press up arrow key to move forward on the Y AXIS
-        {
-            transform.Translate(0, 0, playerSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey("a"))//Press up arrow key to move forward on the Y AXIS
-        {
-            transform.Translate(-playerSpeed * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey("s"))//Press up arrow key to move forward on the Y AXIS
-        {
-            transform.Translate(0, 0, -playerSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey("d"))//Press up arrow key to move forward on the Y AXIS
-        {
-            transform.Translate(playerSpeed * Time.deltaTime, 0, 0);
-        }
+        var movementVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        transform.Translate(playerSpeed * movementVector.normalized * Time.deltaTime);
     }
 }
